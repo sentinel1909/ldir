@@ -10,14 +10,12 @@ fn main() -> io::Result<()> {
     entries.sort();
 
     for entry in entries {
+        println!{"{}", entry.display()};
         if entry.is_dir() {
-            println!{"{}", entry.display()};
             println!("{}", style("directory").green());
         } else {
-            println!("{}", entry.display());
             println!("{}", style("file").blue());
         }
     }
-    
     Ok(())
 }
